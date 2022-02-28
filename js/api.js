@@ -9,6 +9,7 @@ URL Format: https://openapi.programming-hero.com/api/phone/${id}
 
 Example: https://openapi.programming-hero.com/api/phone/apple_iphone_13_pro_max-11089
 */
+
 // search phone area
 const searchPhone = () => {
     const phoneField = document.getElementById('phone-input');
@@ -25,19 +26,20 @@ const searchPhone = () => {
 // display phone
 const serachDisplayPhone = data => {
     const displayPhone = document.getElementById('display-phone');
-    data.forEach(data => {
-        console.log(data);
+    data.forEach(singlData => {
+        console.log(singlData);
         const div = document.createElement('div');
         div.classList.add('col');
         div.innerHTML = `
-        <div class="card h-100">
-            <img src="..." class="card-img-top" alt="...">
-            <div class="card-body">
-                <h5 class="card-title">Card title</h5>
-                <p class="card-text">This is a longer card with supporting text below as a natural lead-in
-                    to additional content. This content is a little bit longer.</p>
+            <div class="card">
+                <img src="${singlData.image}" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">name: ${singlData.phone_name}</h5>
+                    <p class="card-text">brand: ${singlData.brand}</p>
+                </div>
             </div>
-        </div>
-        `
-    });
+        `;
+        displayPhone.appendChild(div)
+        // console.log(show)
+    })
 }
