@@ -12,7 +12,19 @@
 </head>
 
 <body>
+    <div class="container">
+        <header class="my-4">
+            <h2 class="text-success text-center">PhoneDokan.com</h2>
+        </header>
 
+        <!-- search area -->
+        <div class="input-group mb-3 w-75 mx-auto">
+            <input id="phone-input" type="text" class="form-control" placeholder="search your phone"
+                aria-label="Recipient's username" aria-describedby="button-addon2">
+            <button onclick="searchPhone()" class="btn btn-outline-success" type="button"
+                id="button-search">search</button>
+        </div>
+    </div>
     <!-- js api -->
     <script src="js/api.js"></script>
 </body>
