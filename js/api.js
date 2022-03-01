@@ -31,15 +31,19 @@ const serachDisplayPhone = data => {
         const div = document.createElement('div');
         div.classList.add('col');
         div.innerHTML = `
-            <div class="card">
+            <div onclick="loadPhoneDetials('${singlData.slug}')" class="card">
                 <img src="${singlData.image}" class="card-img-top" alt="...">
                 <div class="card-body">
-                    <h5 class="card-title">name: ${singlData.phone_name}</h5>
-                    <p class="card-text">brand: ${singlData.brand}</p>
+                    <h5 class="card-title">Name: ${singlData.phone_name}</h5>
+                    <p class="card-text">Brand: ${singlData.brand}</p>
                 </div>
             </div>
         `;
         displayPhone.appendChild(div)
-        // console.log(show)
     })
+}
+
+// load phone detials
+const loadPhoneDetials = phoneId => {
+    console.log(phoneId);
 }
