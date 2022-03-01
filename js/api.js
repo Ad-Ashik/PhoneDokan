@@ -32,11 +32,13 @@ const serachDisplayPhone = data => {
         const div = document.createElement('div');
         div.classList.add('col');
         div.innerHTML = `
-            <div onclick="loadPhoneDetials('${singlData.slug}')" class="card">
-                <img src="${singlData.image}" class="card-img-top" alt="...">
-                <div class="card-body">
-                    <h5 class="card-title">Name: ${singlData.phone_name}</h5>
-                    <p class="card-text">Brand: ${singlData.brand}</p>
+            <div onclick="loadPhoneDetials('${singlData.slug}')" class="card align-items-center">
+                <div>
+                    <img src="${singlData.image}" class="card-img-top " alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Name: ${singlData.phone_name}</h5>
+                        <p class="card-text">Brand: ${singlData.brand}</p>
+                    </div>
                 </div>
             </div>
         `;
@@ -57,10 +59,11 @@ const loadPhoneDetials = phoneId => {
 const singlePhoneDetials = single => {
     console.log(single);
     const singlePhone = document.getElementById('singil-phone');
+    singlePhone.textContent = '';
     const div = document.createElement('div');
     div.classList.add('card');
     div.innerHTML = `
-        <img style="width: 500px" src="${single.image}" class="card-img-top" alt="...">
+        <img  src="${single.image}" class="card-img-top" alt="...">
         <div class="card-body">
             <h5 class="card-title">${single.name}</h5>
             <p class="card-text">${single.brand}</p>
