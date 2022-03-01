@@ -26,8 +26,9 @@ const searchPhone = () => {
 // display phone
 const serachDisplayPhone = data => {
     const displayPhone = document.getElementById('display-phone');
+    displayPhone.textContent = '';
     data.forEach(singlData => {
-        console.log(singlData);
+        // console.log(singlData);
         const div = document.createElement('div');
         div.classList.add('col');
         div.innerHTML = `
@@ -45,5 +46,27 @@ const serachDisplayPhone = data => {
 
 // load phone detials
 const loadPhoneDetials = phoneId => {
-    console.log(phoneId);
+    // console.log(phoneId);
+    const url = `https://openapi.programming-hero.com/api/phone/${phoneId}`;
+    fetch(url)
+        .then(res => res.json())
+        .then(data => singlePhoneDetials(data.data));
+}
+
+// single phone detials
+const singlePhoneDetials = single => {
+    console.log(single);
+    const singlePhone = document.getElementById('singil-phone');
+    const div = document.createElement('div');
+    div.classList.add('card');
+    div.innerHTML = `
+        <img style="width: 500px" src="${single.image}" class="card-img-top" alt="...">
+        <div class="card-body">
+            <h5 class="card-title">${single.name}</h5>
+            <p class="card-text">${single.brand}</p>
+            <p class="card-text">${single.releaseDate}</p>
+        <a href="#" class="btn btn-primary">Go somewhere</a>
+    `;
+    singlePhone.appendChild(div);
+
 }
