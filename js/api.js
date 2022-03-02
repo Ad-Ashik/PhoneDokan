@@ -80,9 +80,8 @@ const singlePhoneDetials = single => {
                 <li class="list-group-item"><span style="font-weight: 700;">Display-size:</span> ${single.mainFeatures.displaySize}</li>
                 <li class="list-group-item"><span style="font-weight: 700;">Chip-set:</span> ${single.mainFeatures.chipSet}</li>
                 <li class="list-group-item"><span style="font-weight: 700;">Storage:</span> ${single.mainFeatures.storage}</li>
-                <li class="list-group-item"><span style="font-weight: 700;">Sensors: ✅</span> ${single.mainFeatures.sensors[0]}</li>                
-                <li class="list-group-item"><span style="font-weight: 700;">Compass: ✅</span> ${single.mainFeatures.sensors[4]}</li>
-                <li class="list-group-item text-center"><span style="font-weight: 700;">Other</li>
+                <li class="list-group-item"><span style="font-weight: 700;">Sensors: ✅</span> ${single.mainFeatures.sensors[0]}, ${single.mainFeatures.sensors[1]}, ${single.mainFeatures.sensors[2]}, ${single.mainFeatures.sensors[3]}, ${single.mainFeatures.sensors[4]}, ${single.mainFeatures.sensors[5]}</li>
+                <li class="list-group-item text-center bg-success text-white fw-bold fs-4">Other</li>
                 <li class="list-group-item"><span style="font-weight: 700;">Bluetooth: </span> ${single.others.Bluetooth}</li>
                 <li class="list-group-item"><span style="font-weight: 700;">GPS: ✅</span> ${single.others.GPS}</li>
                 <li class="list-group-item"><span style="font-weight: 700;">NFC: </span> ${single.others.NFC}</li>
@@ -90,8 +89,8 @@ const singlePhoneDetials = single => {
                 <li class="list-group-item"><span style="font-weight: 700;">USB: ✅</span> ${single.others.USB}</li>
                 <li class="list-group-item"><span style="font-weight: 700;">WLAN: </span> ${single.others.WLAN}</li>
             </ul>
-            <div class="card-body">
-                <button class="btn btn-success">Buy</button>
+            <div class="card-body text-center">
+                <button class="btn btn-success btn-lg px-5">Buy</button>
             </div>
     `;
     singlePhone.appendChild(div);
