@@ -10,7 +10,6 @@ URL Format: https://openapi.programming-hero.com/api/phone/${id}
 Example: https://openapi.programming-hero.com/api/phone/apple_iphone_13_pro_max-11089
 */
 
-const emtpy = document.getElementById('emtpy');
 // search phone area
 const searchPhone = () => {
     const phoneField = document.getElementById('phone-input');
@@ -23,12 +22,10 @@ const searchPhone = () => {
         .then(res => res.json())
         .then(data => serachDisplayPhone(data.data));
 
-
 }
 
 // display phone
 const serachDisplayPhone = data => {
-    // console.log(data);
     const displayPhone = document.getElementById('display-phone');
     const noReustl = document.getElementById('no-result');
     displayPhone.textContent = '';
@@ -40,7 +37,6 @@ const serachDisplayPhone = data => {
         noReustl.textContent = '';
     }
     data.forEach(singlData => {
-        // console.log(singlData);
         const div = document.createElement('div');
         div.classList.add('col');
         div.innerHTML = `
@@ -50,7 +46,7 @@ const serachDisplayPhone = data => {
                     <div class="card-body text-start">
                         <h5 class="card-title">Name: ${singlData.phone_name}</h5>
                         <p class="card-text">Brand: ${singlData.brand}</p>
-                        <button onclick="loadPhoneDetials('${singlData.slug}')" class="btn btn-success">Details</button>
+                        <button onclick="loadPhoneDetials('${singlData.slug}')" class="btn btn-outline-success">Details</button>
                     </div>
                 </div>
             </div>
@@ -69,13 +65,12 @@ const loadPhoneDetials = phoneId => {
 
 // single phone detials
 const singlePhoneDetials = single => {
-    console.log(single);
     const singlePhone = document.getElementById('singil-phone');
     singlePhone.textContent = '';
     const div = document.createElement('div');
     div.classList.add('card');
     div.innerHTML = `
-        <img src="${single.image}" class="card-img-top w-75 mx-auto p-3" alt="...">
+        <img src="${single.image}" class="card-img-top w-50 mx-auto p-3" alt="...">
             <div class="card-body">
                 <h5 class="card-title text-center">${single.brand} ${single.name}</h5>
                 <p class="card-text"><span style="font-weight: 700;">First Release:</span> ${single.releaseDate}</p>
@@ -94,8 +89,6 @@ const singlePhoneDetials = single => {
                 <li class="list-group-item"><span style="font-weight: 700;">Radio: ✅</span> ${single.others.Radio}</li>
                 <li class="list-group-item"><span style="font-weight: 700;">USB: ✅</span> ${single.others.USB}</li>
                 <li class="list-group-item"><span style="font-weight: 700;">WLAN: </span> ${single.others.WLAN}</li>
-                <li class="list-group-item"><span style="font-weight: 700;">WLAN: ✅</span> ${single.mainFeatures.sensors[1]}</li>
-                <li class="list-group-item"><span style="font-weight: 700;">WLAN: ✅</span> ${single.mainFeatures.sensors[2]}</li>
             </ul>
             <div class="card-body">
                 <button class="btn btn-success">Buy</button>
