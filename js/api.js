@@ -39,8 +39,9 @@ const serachDisplayPhone = data => {
     data.forEach(singlData => {
         const div = document.createElement('div');
         div.classList.add('col');
+        div.classList.add('col-sm-12');
         div.innerHTML = `
-            <div class="card ">
+            <div class="card">
                 <div class="text-center p-4">
                     <img src="${singlData.image}" class="card-img-top w-75" alt="...">
                     <div class="card-body text-start">
