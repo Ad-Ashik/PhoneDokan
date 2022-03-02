@@ -96,4 +96,3 @@ const singlePhoneDetials = single => {
     `;
     singlePhone.appendChild(div);
 }
-
